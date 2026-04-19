@@ -1,15 +1,16 @@
-# MedSpan dependencies — verified to match Google Colab T4's pre-installed
-# stack (Python 3.12, CUDA 12.1) as of 2026. On Colab the install cell
-# becomes a no-op; locally these are the versions we test against.
+# MedSpan dependencies — pinned to a transformers 4.44 stack because Colab T4
+# (as of 2026) ships torch 2.2.2, and transformers 4.45+ requires torch 2.4+
+# (calls `torch.library.register_fake`, which doesn't exist in torch 2.2).
 #
-# torch is intentionally unpinned so Colab's CUDA build is preserved. On
-# a local machine, install the matching variant from pytorch.org first.
+# torch is intentionally unpinned: Colab ships its own CUDA build that we
+# must NOT overwrite. Locally, install the right torch variant from
+# pytorch.org first.
 torch>=2.2.0
 
-transformers==4.46.3
-accelerate==1.1.1
+transformers==4.44.2
+accelerate==0.34.2
 datasets==2.21.0
-tokenizers==0.20.3
+tokenizers==0.19.1
 evaluate==0.4.3
 
 gradio==4.44.0

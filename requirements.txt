@@ -1,15 +1,19 @@
-# Core ML / NLP — versions tested on Colab T4 (Python 3.12) and M1 Mac (Python 3.11)
-# torch is intentionally unpinned: Colab ships a CUDA-enabled build;
-# on a local machine install the right variant from pytorch.org first.
+# MedSpan dependencies — tested on Colab T4 (Python 3.12) and M1 Mac (Python 3.11).
+#
+# torch is intentionally unpinned: Colab ships a CUDA build; install the
+# correct variant from pytorch.org for local machines.
 torch>=2.2.0
-transformers==4.44.2
+
+# Core HuggingFace stack — these versions are mutually compatible.
+# Bumping any one of them in isolation tends to break Colab.
+transformers==4.46.3
+accelerate==1.1.1
 datasets==2.21.0
-tokenizers==0.19.1
-accelerate==0.34.2
+tokenizers==0.20.3
 evaluate==0.4.3
 
 # Gradio UI
-gradio==4.42.0
+gradio==4.44.0
 
 # Data / utilities
 numpy>=1.26.4

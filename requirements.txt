@@ -1,25 +1,22 @@
-# MedSpan dependencies — tested on Colab T4 (Python 3.12) and M1 Mac (Python 3.11).
+# MedSpan dependencies — verified to match Google Colab T4's pre-installed
+# stack (Python 3.12, CUDA 12.1) as of 2026. On Colab the install cell
+# becomes a no-op; locally these are the versions we test against.
 #
-# torch is intentionally unpinned: Colab ships a CUDA build; install the
-# correct variant from pytorch.org for local machines.
+# torch is intentionally unpinned so Colab's CUDA build is preserved. On
+# a local machine, install the matching variant from pytorch.org first.
 torch>=2.2.0
 
-# Core HuggingFace stack — these versions are mutually compatible.
-# Bumping any one of them in isolation tends to break Colab.
 transformers==4.46.3
 accelerate==1.1.1
 datasets==2.21.0
 tokenizers==0.20.3
 evaluate==0.4.3
 
-# Gradio UI
 gradio==4.44.0
 
-# Data / utilities
-numpy>=1.26.4
-pandas>=2.2.2
+numpy==1.26.4
+pandas==2.2.2
 scikit-learn>=1.4.2
 tqdm>=4.66.2
 
-# Notebook
 ipywidgets>=8.1.2

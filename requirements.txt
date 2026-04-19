@@ -1,19 +1,21 @@
-# Core ML / NLP
-torch==2.2.2
-transformers==4.40.1
-datasets==2.19.0
+# Core ML / NLP — versions tested on Colab T4 (Python 3.12) and M1 Mac (Python 3.11)
+# torch is intentionally unpinned: Colab ships a CUDA-enabled build;
+# on a local machine install the right variant from pytorch.org first.
+torch>=2.2.0
+transformers==4.44.2
+datasets==2.21.0
 tokenizers==0.19.1
-accelerate==0.29.3
-evaluate==0.4.1
+accelerate==0.34.2
+evaluate==0.4.3
 
 # Gradio UI
-gradio==4.28.3
+gradio==4.42.0
 
 # Data / utilities
-numpy==1.26.4
-pandas==2.2.2
-scikit-learn==1.4.2
-tqdm==4.66.2
+numpy>=1.26.4
+pandas>=2.2.2
+scikit-learn>=1.4.2
+tqdm>=4.66.2
 
 # Notebook
-ipywidgets==8.1.2
+ipywidgets>=8.1.2

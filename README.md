@@ -50,6 +50,8 @@ pip install -r requirements.txt
 ```
 
 Make sure `saved_model/` contains the fine-tuned model (run the notebook first, or download a pretrained checkpoint).
+The repo intentionally does not track large weight files like `saved_model/model.safetensors`;
+store them outside normal Git history, or publish them via Hugging Face Hub / Git LFS.
 
 ### Launch
 

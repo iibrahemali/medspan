@@ -10,4 +10,4 @@ git push space main
 
 3. The Space runner installs `requirements.txt` and launches `app.py` automatically.
 
-> Upload `saved_model/` files to the Space repository or load the model directly from the HF Hub if you've pushed it there.
+> Do not commit `saved_model/model.safetensors` to a normal GitHub repository. Put model weights in the HF Space repo with LFS enabled, or load them from the HF Hub.

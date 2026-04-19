@@ -8,21 +8,41 @@ Deploy to HF Spaces:
   2. The Space runner will install requirements.txt and launch app.py automatically.
 """
 
+import os
+
+os.environ.setdefault("USE_TF", "0")
+os.environ.setdefault("TRANSFORMERS_NO_TF", "1")
+os.environ.setdefault("USE_FLAX", "0")
+
 import gradio as gr
+import torch
 from transformers import pipeline
 
 # ---------------------------------------------------------------------------
 # Model loading
 # ---------------------------------------------------------------------------
 MODEL_DIR = "./saved_model"
+MODEL_WEIGHTS = os.path.join(MODEL_DIR, "model.safetensors")
+
+if not os.path.exists(MODEL_WEIGHTS):
+    raise FileNotFoundError(
+        "Missing saved_model/model.safetensors. Download the fine-tuned weights "
+        "into ./saved_model, or load the model from the Hugging Face Hub instead."
+    )
+
+if torch.cuda.is_available():
+    PIPELINE_DEVICE = 0
+elif torch.backends.mps.is_available():
+    PIPELINE_DEVICE = "mps"
+else:
+    PIPELINE_DEVICE = -1
 
 print(f"Loading model from {MODEL_DIR} …")
 qa_pipeline = pipeline(
     "question-answering",
     model=MODEL_DIR,
     tokenizer=MODEL_DIR,
-    # Let HF pipeline pick the best available device automatically
-    device_map="auto",
+    device=PIPELINE_DEVICE,
     handle_impossible_answer=False,
 )
 print("Model loaded.")

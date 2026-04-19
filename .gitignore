@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Large model artifacts should live in HF Hub or Git LFS, not normal git history.
+saved_model/*.safetensors
+saved_model/pytorch_model.bin

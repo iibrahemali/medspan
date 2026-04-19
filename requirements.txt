@@ -1,0 +1,19 @@
+# Core ML / NLP
+torch==2.2.2
+transformers==4.40.1
+datasets==2.19.0
+tokenizers==0.19.1
+accelerate==0.29.3
+evaluate==0.4.1
+
+# Gradio UI
+gradio==4.28.3
+
+# Data / utilities
+numpy==1.26.4
+pandas==2.2.2
+scikit-learn==1.4.2
+tqdm==4.66.2
+
+# Notebook
+ipywidgets==8.1.2

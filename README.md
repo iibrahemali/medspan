@@ -66,21 +66,3 @@ Open `http://localhost:7860` in your browser.
 The notebook auto-detects Apple MPS and switches to a 100-example debug subset with 1 training epoch, making it possible to verify the pipeline locally without a GPU.
 
 ---
-
-## Citation
-
-```
-@article{tsatsaronis2015bioasq,
-  title={An overview of the BioASQ large-scale biomedical semantic indexing and question answering competition},
-  author={Tsatsaronis, George and others},
-  journal={BMC Bioinformatics},
-  year={2015}
-}
-
-@article{lee2020biobert,
-  title={BioBERT: a pre-trained biomedical language representation model for biomedical text mining},
-  author={Lee, Jinhyuk and others},
-  journal={Bioinformatics},
-  year={2020}
-}
-```

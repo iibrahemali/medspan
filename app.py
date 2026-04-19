@@ -1,13 +1,3 @@
-"""
-MedSpan — Gradio inference app.
-Loads the fine-tuned BioBERT QA model from ./saved_model/ and serves a
-two-input UI (question + PubMed abstract) that returns the extracted answer span.
-
-Deploy to HF Spaces:
-  1. Push this repo to a HF Space (SDK: gradio).
-  2. The Space runner will install requirements.txt and launch app.py automatically.
-"""
-
 import os
 
 os.environ.setdefault("USE_TF", "0")
